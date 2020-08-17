@@ -1,0 +1,6 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: destrule-nginx-app03
+spec:
+  host: svc-ginx-app03

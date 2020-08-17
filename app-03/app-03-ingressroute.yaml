@@ -1,0 +1,16 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: traefikingressroute-app03
+  namespace: istio-system
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: PathPrefix(`/app03`)
+    kind: Rule
+    services:
+    - name: istio-ingressgateway
+      port: 80
+      strategy: RoundRobin
+      scheme: h2c
